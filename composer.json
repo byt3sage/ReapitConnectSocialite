@@ -1,7 +1,7 @@
 {
     "name": "jaetooledev/reapitconnectsocialite",
     "description": "A provider for Laravel Socialite to allow your to use Reapit Connect with Socialite.",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "laravel/socialite": "*"
     },
