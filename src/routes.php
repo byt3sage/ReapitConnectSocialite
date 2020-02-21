@@ -1,4 +1,5 @@
 <?php
-
-Route::get('/rc-login', 'JaeTooleDev\ReapitConnectSocialite@redirectToProvider');
-Route::get('/callback', 'JaeTooleDev\ReapitConnectSocialite@handleProviderCallback');
+Route::group(['middleware' => ['web']], function() {
+    Route::get('/rc-login', 'JaeTooleDev\ReapitConnectSocialite\ReapitConnectLoginController@redirectToProvider');
+    Route::get('/callback', 'JaeTooleDev\ReapitConnectSocialite\ReapitConnectLoginController@handleProviderCallback');
+});

@@ -3,6 +3,7 @@
 namespace JaeTooleDev\ReapitConnectSocialite;
 
 use Illuminate\Support\ServiceProvider;
+use JaeTooleDev\ReapitConnectSocialite\Provider as RCProvider;
 
 class ReapitConnectSocialiteProvider extends ServiceProvider
 {
