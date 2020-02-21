@@ -17,11 +17,17 @@ class Provider extends AbstractProvider implements ProviderInterface
         return $this->buildAuthUrlFromBase('https://dev.connect.reapit.cloud/authorize', $state);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function getTokenUrl()
     {
         return 'https://dev.connect.reapit.cloud/token';
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getAccessToken($code)
     {
         $response = $this->getHttpClient()->post($this->getTokenUrl(), [
@@ -31,6 +37,9 @@ class Provider extends AbstractProvider implements ProviderInterface
         return $this->parseAccessToken($response->getBody());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function getTokenFields($code)
     {
         return [
@@ -41,23 +50,30 @@ class Provider extends AbstractProvider implements ProviderInterface
         ];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function getUserByToken($token)
     {
-        // dd($token);
         $response = $this->getHttpClient()->get('https://dev.connect.reapit.cloud/oauth2/userInfo', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
             ]
         ]);
-        // dd($response->getBody()->getContents());
         return json_decode($response->getBody(), true);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function formatScopes(array $scopes, $scopeSeperator)
     {
         return implode($scopeSeperator, $scopes);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function mapUserToObject(array $user) {
         return (new User)->setRaw($user)->map([
             'name' => $user['name'],
