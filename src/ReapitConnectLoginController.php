@@ -19,7 +19,7 @@ class ReapitConnectLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/reapit/success';
 
     /**
      * Create a new controller instance.
