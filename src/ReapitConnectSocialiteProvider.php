@@ -3,7 +3,7 @@
 namespace JaeTooleDev\ReapitConnectSocialite;
 
 use Illuminate\Support\ServiceProvider;
-use JaeTooleDev\ReapitConnectSocialite\Provider as RCProvider;
+use JaeTooleDev\ReapitConnectSocialite\Provider;
 
 class ReapitConnectSocialiteProvider extends ServiceProvider
 {
@@ -36,7 +36,7 @@ class ReapitConnectSocialiteProvider extends ServiceProvider
             'reapit_connect',
             function ($app) use ($socialite) {
                 $config = $app['config']['services.reapit_connect'];
-                return $socialite->buildProvider(RCProvider::class, $config);
+                return $socialite->buildProvider(Provider::class, $config);
             }
         );
     }
