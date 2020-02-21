@@ -25,7 +25,7 @@ Then, as you may have noticed above, we need to define a variable in our `.env` 
 By default, we have two routes - `/reapit/login` and `/reapit/callback`. As you may have guessed, one is to send the user to the Reapit Connect login and the other is a callback. This provider comes with a default controller which takes care of authenticating the user using Laravel's default user authentication. It will then redirect the user to whatever URL you give the name 'Home' in your web.php routes file.
 
 ## Next Up
-I'm actively working on this plugin for a few projects. If you keep your eyes posted on the project board you can see what I'm working on next.
+I'm actively working on this plugin for a few projects. If you keep your eyes posted on the project board you can see what I'm working on next. Any issues, please use the Github Issue board and I'll look straight into it. Any security issues should be reported to me at: jaetooledev@gmail.com
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
