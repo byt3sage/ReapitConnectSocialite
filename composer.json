@@ -5,16 +5,17 @@
     "require": {
         "laravel/socialite": "*"
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "jaetooledev\\reapitconnectsocialite\\ReapitConnectSocialiteProvider"
-            ]
-        }
-    },
+    
     "autoload": {
         "psr-4": {
             "JaeTooleDev\\ReapitConnectSocialite\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JaeTooleDev\\ReapitConnectSocialite\\ReapitConnectSocialiteProvider"
+            ]
         }
     }
 }
