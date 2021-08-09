@@ -14,7 +14,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase('https://dev.connect.reapit.cloud/authorize', $state);
+        return $this->buildAuthUrlFromBase('https://connect.reapit.cloud/authorize', $state);
     }
 
     /**
@@ -22,7 +22,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenUrl()
     {
-        return 'https://dev.connect.reapit.cloud/token';
+        return 'https://connect.reapit.cloud/token';
     }
 
     /**
@@ -55,7 +55,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get('https://dev.connect.reapit.cloud/oauth2/userInfo', [
+        $response = $this->getHttpClient()->get('https://connect.reapit.cloud/oauth2/userInfo', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
             ]
